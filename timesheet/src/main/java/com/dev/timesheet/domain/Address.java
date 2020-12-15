@@ -12,7 +12,6 @@ import io.swagger.annotations.ApiModelProperty;
 @Builder
 @ToString
 @QueryEntity
-@Document
 
 public class Address {
 

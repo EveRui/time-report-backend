@@ -22,9 +22,9 @@ public class TimesheetApplication implements CommandLineRunner {
 ///*
 	@Autowired
 	TimesheetDAO timesheetDAO;
-
 	@Autowired
 	EmployeeDAO employeeDAO;
+
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -41,22 +41,21 @@ public class TimesheetApplication implements CommandLineRunner {
 		for (Timesheet timesheet : timesheetDAO.findAll()) {
 			System.out.println(timesheet);
 		}
-
 		//employeeDAO
 		employeeDAO.deleteAll();
-		//save a employee
+//save a employee
 		Address addr = Address.builder().line1("123 Rd").line2("Apt 1").city("SF").state("CA").zipcode("123456").build();
 		Emergency emergencies = Emergency.builder().firstname1("fn1").lastname1("ln1").phone1("111-111-1111").firstname2("fn2").lastname2("ln2").phone1("222-222-2222").build();
 		employeeDAO.save(Employee.builder().userid("1").phone("123-123-1234").email("123@gmail.com").address(addr).emergency(emergencies).build());
 
-		//fetch
+//fetch
 		System.out.println("Employee found with findAll():");
 		System.out.println("-------------------------------");
 		for (Employee employee : employeeDAO.findAll()) {
 			System.out.println(employee);
+
+
 		}
-
-
 	}
 //*/
 }

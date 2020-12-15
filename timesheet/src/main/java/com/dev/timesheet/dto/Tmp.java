@@ -8,5 +8,5 @@ import lombok.*;
 @NoArgsConstructor
 public class Tmp {
     String firstname;
-    String userid;
+
 }

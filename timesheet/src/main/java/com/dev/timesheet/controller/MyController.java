@@ -1,8 +1,8 @@
 package com.dev.timesheet.controller;
 
-import com.dev.timesheet.dao.EmployeeDAO;
+
 import com.dev.timesheet.dao.TimesheetDAO;
-import com.dev.timesheet.domain.Employee;
+
 import com.dev.timesheet.domain.Timesheet;
 import com.dev.timesheet.dto.Tmp;
 import io.swagger.annotations.Api;
@@ -22,8 +22,7 @@ public class MyController {
 
     @Autowired
     TimesheetDAO timesheetDAO;
-    @Autowired
-    EmployeeDAO employeeDAO;
+
 
     @PostMapping("byFirstname")
     @ApiOperation(value = "Find Timesheet by First Name", response = Timesheet.class)

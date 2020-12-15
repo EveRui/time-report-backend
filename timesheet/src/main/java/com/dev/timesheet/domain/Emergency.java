@@ -13,8 +13,6 @@ import io.swagger.annotations.ApiModelProperty;
 @Builder
 @ToString
 @QueryEntity
-@Document
-
 public class Emergency {
 
     @ApiModelProperty(notes = "Emergency firstname1")

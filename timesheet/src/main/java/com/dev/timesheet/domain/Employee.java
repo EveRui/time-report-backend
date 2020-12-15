@@ -14,6 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @ToString
 @QueryEntity
 @Document
+
 public class Employee {
     @Id
     @ApiModelProperty(notes = "The database generated customer ID")
