@@ -10,12 +10,12 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class TimesheetApplication /*implements CommandLineRunner*/ {
-
+//public class TimesheetApplication {
+public class TimesheetApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(TimesheetApplication.class, args);
 	}
-/*
+///*
 	@Autowired
 	TimesheetDAO timesheetDAO;
 
@@ -24,7 +24,7 @@ public class TimesheetApplication /*implements CommandLineRunner*/ {
 
 		timesheetDAO.deleteAll();
 
-		// save a couple of customers
+		// save a couple of timesheets
 		timesheetDAO.save(Timesheet.builder().firstname("Alice").lastname("Smith").build());
 		timesheetDAO.save(Timesheet.builder().firstname("Bob").lastname("Smith").build());
 
@@ -35,5 +35,5 @@ public class TimesheetApplication /*implements CommandLineRunner*/ {
 			System.out.println(timesheet);
 		}
 	}
-*/
+//*/
 }
