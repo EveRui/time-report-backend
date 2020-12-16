@@ -5,7 +5,6 @@ spring:
     mongodb:
       uri: mongodb+srv://test:123@atlascluster.gze84.mongodb.net/mydb?retryWrites=true&w=majority
 
-
 server:
   port: 8082
 

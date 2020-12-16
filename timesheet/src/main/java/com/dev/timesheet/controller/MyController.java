@@ -28,6 +28,7 @@ public class MyController {
     @Autowired
     TimesheetDAO timesheetDAO;
 
+
     @Autowired
     EmployeeDAO employeeDAO;
 
@@ -38,10 +39,11 @@ public class MyController {
         System.out.println("From react: " + data.getFirstname());
         return timesheetDAO.findByFirstname(data.getFirstname()).orElse(null);
     }
+     */
 
     @GetMapping("all")
-    @ApiOperation(value = "List all Customer", response = Iterable.class)
-    public List<Timesheet> getAllCustomer() {
+    @ApiOperation(value = "List all timesheets", response = Iterable.class)
+    public List<Timesheet> getAllTimesheet() {
         return timesheetDAO.findAll();
     }
 
