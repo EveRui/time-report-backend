@@ -1,4 +1,4 @@
-package com.dev.timesheet.domain;
+package com.gev.timesheet.domain;
 
 import com.querydsl.core.annotations.QueryEntity;
 import io.swagger.annotations.ApiModelProperty;

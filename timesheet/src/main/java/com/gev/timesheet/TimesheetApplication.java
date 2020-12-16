@@ -1,13 +1,6 @@
-package com.dev.timesheet;
+package com.gev.timesheet;
 
-import com.dev.timesheet.dao.TimesheetDAO;
-import com.dev.timesheet.dao.EmployeeDAO;
-import com.dev.timesheet.domain.Address;
-import com.dev.timesheet.domain.Emergency;
-import com.dev.timesheet.domain.Employee;
-import com.dev.timesheet.domain.Timesheet;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
@@ -29,7 +22,6 @@ public class TimesheetApplication {
 	@Override
 	public void run(String... args) throws Exception {
 
-		//timesheetDAO.deleteAll();
 
 		// save a couple of timesheets
 		//timesheetDAO.save(Timesheet.builder().firstname("Alice").lastname("Smith").build());
@@ -43,7 +35,6 @@ public class TimesheetApplication {
 			System.out.println(timesheet);
 		}
 		//employeeDAO
-		employeeDAO.deleteAll();
 //save a employee
 		Address addr = Address.builder().line1("123 Rd").line2("Apt 1").city("SF").state("CA").zipcode("123456").build();
 		Emergency emergencies = Emergency.builder().firstname1("fn1").lastname1("ln1").phone1("111-111-1111").firstname2("fn2").lastname2("ln2").phone1("222-222-2222").build();

@@ -1,17 +1,12 @@
-package com.dev.timesheet.controller;
+package com.gev.timesheet.controller;
 
 
-import com.dev.timesheet.dao.TimesheetDAO;
-import com.dev.timesheet.dao.EmployeeDAO;
-
-import com.dev.timesheet.domain.Employee;
-import com.dev.timesheet.domain.Timesheet;
-import com.dev.timesheet.dto.Tmp;
+import com.gev.timesheet.dao.EmployeeDAO;
+import com.gev.timesheet.dao.TimesheetDAO;
+import com.gev.timesheet.domain.Employee;
+import com.gev.timesheet.domain.Timesheet;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +28,7 @@ public class MyController {
     EmployeeDAO employeeDAO;
 
 
+        /*
     @PostMapping("byFirstname")
     @ApiOperation(value = "Find Timesheet by First Name", response = Timesheet.class)
     public Timesheet getCustomerByFirstName(@RequestBody Tmp data) {
@@ -41,10 +37,11 @@ public class MyController {
     }
      */
 
+
     @GetMapping("all")
     @ApiOperation(value = "List all timesheets", response = Iterable.class)
     public List<Timesheet> getAllTimesheet() {
-        return timesheetDAO.findAll();
+            return timesheetDAO.findAll();
     }
 
     @GetMapping("getEmployeeByUserid/{userid}")

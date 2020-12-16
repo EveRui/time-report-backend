@@ -1,4 +1,4 @@
-package com.dev.timesheet.domain;
+package com.gev.timesheet.domain;
 
 import com.querydsl.core.annotations.QueryEntity;
 import lombok.AllArgsConstructor;
@@ -10,14 +10,14 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-//@QueryEntity
 /**
- * Used by Template
+ * Used by Timesheet
  */
-public class DayTemplate {
-    private Integer starttime;
-    private Integer endtime;
+public class Day {
+    private String starttime;
+    private String endtime;
     private Integer total;
     private boolean usefloating;
     private boolean usevacation;
+    private Integer year;
 }

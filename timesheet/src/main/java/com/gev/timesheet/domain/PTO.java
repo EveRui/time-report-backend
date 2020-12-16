@@ -1,4 +1,4 @@
-package com.dev.timesheet.domain;
+package com.gev.timesheet.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

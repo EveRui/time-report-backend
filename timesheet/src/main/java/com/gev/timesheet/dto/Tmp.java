@@ -1,4 +1,4 @@
-package com.dev.timesheet.dto;
+package com.gev.timesheet.dto;
 
 import lombok.*;
 

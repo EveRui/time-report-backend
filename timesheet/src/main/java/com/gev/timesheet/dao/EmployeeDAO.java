@@ -1,6 +1,6 @@
-package com.dev.timesheet.dao;
+package com.gev.timesheet.dao;
 
-import com.dev.timesheet.domain.Employee;
+import com.gev.timesheet.domain.Employee;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import java.util.Optional;
 

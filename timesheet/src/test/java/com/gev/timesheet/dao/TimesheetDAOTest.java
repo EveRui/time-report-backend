@@ -1,7 +1,7 @@
-package com.dev.timesheet.dao;
+package com.gev.timesheet.dao;
 
-import com.dev.timesheet.TimesheetApplication;
-import com.dev.timesheet.domain.Timesheet;
+import com.gev.timesheet.TimesheetApplication;
+import com.gev.timesheet.domain.Timesheet;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
