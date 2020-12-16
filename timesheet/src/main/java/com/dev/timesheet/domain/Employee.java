@@ -13,8 +13,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @ToString
 @QueryEntity
-@Document
 
+@Document(collection = "Employee")
 public class Employee {
     @Id
     @ApiModelProperty(notes = "The database generated customer ID")
