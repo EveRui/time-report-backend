@@ -21,16 +21,18 @@ public class MyController {
     @Autowired
     TimesheetDAO timesheetDAO;
 
+    /*
     @PostMapping("byFirstname")
     @ApiOperation(value = "Find Timesheet by First Name", response = Timesheet.class)
     public Timesheet getCustomerByFirstName(@RequestBody Tmp data) {
         System.out.println("From react: " + data.getFirstname());
         return timesheetDAO.findByFirstname(data.getFirstname()).orElse(null);
     }
+     */
 
     @GetMapping("all")
-    @ApiOperation(value = "List all Customer", response = Iterable.class)
-    public List<Timesheet> getAllCustomer() {
+    @ApiOperation(value = "List all timesheets", response = Iterable.class)
+    public List<Timesheet> getAllTimesheet() {
         return timesheetDAO.findAll();
     }
 }
