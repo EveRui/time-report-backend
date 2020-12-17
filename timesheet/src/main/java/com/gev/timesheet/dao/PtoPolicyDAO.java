@@ -1,6 +1,6 @@
-package com.dev.timesheet.dao;
+package com.gev.timesheet.dao;
 
-import com.dev.timesheet.domain.PtoPolicy;
+import com.gev.timesheet.domain.PtoPolicy;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

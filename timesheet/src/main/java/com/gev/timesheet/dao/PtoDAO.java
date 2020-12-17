@@ -1,8 +1,7 @@
-package com.dev.timesheet.dao;
+package com.gev.timesheet.dao;
 
-import com.dev.timesheet.domain.PTO;
+import com.gev.timesheet.domain.PTO;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
 import java.util.Optional;
 
 public interface PtoDAO extends MongoRepository<PTO, String> {

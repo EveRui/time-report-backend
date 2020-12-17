@@ -1,6 +1,6 @@
-package com.dev.timesheet.dao;
+package com.gev.timesheet.dao;
 
-import com.dev.timesheet.domain.File;
+import com.gev.timesheet.domain.File;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;

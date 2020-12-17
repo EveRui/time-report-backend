@@ -1,10 +1,8 @@
-package com.dev.timesheet.dao;
+package com.gev.timesheet.dao;
 
-import com.dev.timesheet.TimesheetApplication;
-import com.dev.timesheet.domain.File;
-import com.dev.timesheet.domain.PTO;
+import com.gev.timesheet.TimesheetApplication;
+import com.gev.timesheet.domain.PtoPolicy;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,21 +13,16 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {TimesheetApplication.class})
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class FileDAOTest {
-
+public class PtoPolicyDAOTest {
     @Autowired
-    private FileDAO fileDAO;
-
-    @BeforeAll
-    public void init() {
-    }
+    private PtoPolicyDAO ptoPolicyDAO;
 
     @Test
-    public void testFindByUseridAndWeekending() {
-        File file = fileDAO.findByUseridAndName("test", "testfile").orElse(null);
+    public void testFindByJobtitleAndYear() {
+        PtoPolicy policy = ptoPolicyDAO.findByJobtitleAndYear("SDE",2019).orElse(null);
         Assertions.assertAll(() -> {
-            Assertions.assertEquals("2020-12-15", file.getDate());
-            Assertions.assertEquals(2, fileDAO.findAll().size());
+            Assertions.assertEquals(3, policy.getFloatingnum());
+            //Assertions.assertEquals(5, testdao.findAll().size());
         });
     }
 }

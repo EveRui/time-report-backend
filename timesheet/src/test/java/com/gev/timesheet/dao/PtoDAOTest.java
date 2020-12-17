@@ -1,10 +1,10 @@
-package com.dev.timesheet.dao;
+package com.gev.timesheet.dao;
 
-import com.dev.timesheet.TimesheetApplication;
 
-import com.dev.timesheet.domain.PTO;
-import com.dev.timesheet.domain.PtoPolicy;
+import com.gev.timesheet.TimesheetApplication;
+import com.gev.timesheet.domain.PTO;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -15,15 +15,19 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {TimesheetApplication.class})
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class PtoPolicyDAOTest {
+public class PtoDAOTest {
     @Autowired
-    private PtoPolicyDAO ptoPolicyDAO;
+    private PtoDAO testdao;
+
+    @BeforeAll
+    public void init() {
+    }
 
     @Test
-    public void testFindByJobtitleAndYear() {
-        PtoPolicy policy = ptoPolicyDAO.findByJobtitleAndYear("SDE",2019).orElse(null);
+    public void testFindByUseridAndYear() {
+        PTO pto = testdao.findByUseridAndYear("test", 2021).orElse(null);
         Assertions.assertAll(() -> {
-            Assertions.assertEquals(3, policy.getFloatingnum());
+            Assertions.assertEquals(3, pto.getFloatingleft());
             //Assertions.assertEquals(5, testdao.findAll().size());
         });
     }

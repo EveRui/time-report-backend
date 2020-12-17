@@ -1,8 +1,7 @@
-package com.dev.timesheet.dao;
+package com.gev.timesheet.dao;
 
-
-import com.dev.timesheet.TimesheetApplication;
-import com.dev.timesheet.domain.PTO;
+import com.gev.timesheet.TimesheetApplication;
+import com.gev.timesheet.domain.File;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -15,20 +14,21 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {TimesheetApplication.class})
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class PtoDAOTest {
+public class FileDAOTest {
+
     @Autowired
-    private PtoDAO testdao;
+    private FileDAO fileDAO;
 
     @BeforeAll
     public void init() {
     }
 
     @Test
-    public void testFindByUseridAndWeekending() {
-        PTO pto = testdao.findByUseridAndYear("test", 2021).orElse(null);
+    public void testFindByUseridAndName() {
+        File file = fileDAO.findByUseridAndName("test", "testfile").orElse(null);
         Assertions.assertAll(() -> {
-            Assertions.assertEquals(3, pto.getFloatingleft());
-            //Assertions.assertEquals(5, testdao.findAll().size());
+            Assertions.assertEquals("2020-12-15", file.getDate());
+            Assertions.assertEquals(2, fileDAO.findAll().size());
         });
     }
 }

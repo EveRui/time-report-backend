@@ -1,11 +1,11 @@
-package com.dev.timesheet.controller;
+package com.gev.timesheet.controller;
 
-import com.dev.timesheet.dao.PtoDAO;
-import com.dev.timesheet.dao.PtoPolicyDAO;
-import com.dev.timesheet.dao.TimesheetDAO;
-import com.dev.timesheet.domain.PTO;
-import com.dev.timesheet.domain.PtoPolicy;
-import com.dev.timesheet.domain.Timesheet;
+import com.gev.timesheet.dao.PtoDAO;
+import com.gev.timesheet.dao.PtoPolicyDAO;
+import com.gev.timesheet.dao.TimesheetDAO;
+import com.gev.timesheet.domain.PTO;
+import com.gev.timesheet.domain.PtoPolicy;
+import com.gev.timesheet.domain.Timesheet;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,8 +18,8 @@ import java.util.Optional;
 
 @RestController
 @Api(value="My Rest Endpoint")
-@RequestMapping("/timesheet")
-public class TimesheetController {
+@RequestMapping("/summary")
+public class SummaryController {
 
     @Autowired
     TimesheetDAO timesheetDAO;
