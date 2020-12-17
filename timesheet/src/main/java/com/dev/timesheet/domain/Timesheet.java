@@ -71,6 +71,6 @@ public class Timesheet {
     @ApiModelProperty(notes = "Timesheet Saturday record")
     private Day day7;
 
-//    @ApiModelProperty(notes = "Timesheet current PTOs")
-//    private List<PTO> ptos;
+    @ApiModelProperty(notes = "Timesheet current PTOs")
+    private List<PTO> ptos;
 }

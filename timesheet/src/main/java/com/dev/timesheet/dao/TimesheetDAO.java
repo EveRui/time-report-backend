@@ -8,4 +8,7 @@ import java.util.Optional;
 
 public interface TimesheetDAO extends MongoRepository<Timesheet, String> {
     Optional<Timesheet> findByUseridAndWeekending(String userid, String weekending);
+
+    List<Timesheet> findByUserid(String userid);
+
 }
