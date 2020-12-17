@@ -1,6 +1,10 @@
 server:
   port: 8081
 
+app:
+  jwtSecret: georgeSecretKey
+  jwtExpirationMs: 86400000
+
 eureka:
   client:
     serviceUrl:
