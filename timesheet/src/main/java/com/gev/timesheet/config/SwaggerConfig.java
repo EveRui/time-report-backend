@@ -1,4 +1,4 @@
-package com.dev.timesheet.config;
+package com.gev.timesheet.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
