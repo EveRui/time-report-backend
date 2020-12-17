@@ -78,4 +78,14 @@ public class MyController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
+    @GetMapping("getTimesheetByUseridAndWeekending/{userid}/{weekending}")
+    @ApiOperation(value = "Find PtoPolicy by Jobtitle&Year", response = PtoPolicy.class)
+    ResponseEntity<?> getTimesheetByUseridAndWeekending(@PathVariable String userid, @PathVariable String weekending) {
+
+        System.out.println("From react: " + userid + "-" + weekending);
+        Optional<Timesheet> rst = timesheetDAO.findByUseridAndWeekending(userid,weekending);
+        return rst.map(response -> ResponseEntity.ok().body(response))
+                .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    }
+
 }
