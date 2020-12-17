@@ -1,7 +1,8 @@
 package com.gev.timesheet.dao;
 
+
 import com.gev.timesheet.TimesheetApplication;
-import com.gev.timesheet.domain.Timesheet;
+import com.gev.timesheet.domain.PTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -14,24 +15,20 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = {TimesheetApplication.class})
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class TimesheetDAOTest {
+public class PtoDAOTest {
     @Autowired
-    private TimesheetDAO testdao;
+    private PtoDAO testdao;
 
     @BeforeAll
     public void init() {
-        //MockitoAnnotations.initMocks(this);
-        //Mockito.when(personDAO.getCurrentSession()).thenReturn(null);
-        //Mockito.when(personDAO.getCurrentSession()).thenReturn(null);
     }
 
     @Test
-    public void testFindByUseridAndWeekending() {
-        Timesheet sheet = testdao.findByUseridAndWeekending("base", "2020-12-12").orElse(null);
+    public void testFindByUseridAndYear() {
+        PTO pto = testdao.findByUseridAndYear("test", 2021).orElse(null);
         Assertions.assertAll(() -> {
-            Assertions.assertEquals(48, sheet.getTotalcompensatedhours());
-            Assertions.assertEquals(true, testdao.findAll().size() > 0);
+            Assertions.assertEquals(3, pto.getFloatingleft());
+            //Assertions.assertEquals(5, testdao.findAll().size());
         });
     }
-
 }

@@ -14,8 +14,8 @@ import lombok.Setter;
  * Used by Timesheet
  */
 public class Day {
-    private String starttime;
-    private String endtime;
+    private Integer starttime;
+    private Integer endtime;
     private Integer total;
     private boolean usefloating;
     private boolean usevacation;

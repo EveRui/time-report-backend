@@ -1,7 +1,8 @@
+
 package com.gev.timesheet.controller;
 
-
-import com.gev.timesheet.dao.EmployeeDAO;
+import com.gev.timesheet.dao.PtoDAO;
+import com.gev.timesheet.dao.PtoPolicyDAO;
 import com.gev.timesheet.dao.TimesheetDAO;
 import com.gev.timesheet.domain.Timesheet;
 import io.swagger.annotations.Api;
@@ -21,12 +22,13 @@ public class MyController {
     @Autowired
     TimesheetDAO timesheetDAO;
 
+    @Autowired
+    PtoDAO ptoDAO;
 
     @Autowired
-    EmployeeDAO employeeDAO;
+    PtoPolicyDAO ptoPolicyDAO;
 
-
-        /*
+    /*
     @PostMapping("byFirstname")
     @ApiOperation(value = "Find Timesheet by First Name", response = Timesheet.class)
     public Timesheet getCustomerByFirstName(@RequestBody Tmp data) {
@@ -39,10 +41,7 @@ public class MyController {
     @GetMapping("all")
     @ApiOperation(value = "List all timesheets", response = Iterable.class)
     public List<Timesheet> getAllTimesheet() {
-            return timesheetDAO.findAll();
+        return timesheetDAO.findAll();
     }
-
-
-
 
 }
