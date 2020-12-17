@@ -1,4 +1,6 @@
+
 package com.gev.timesheet.controller;
+
 
 
 import com.gev.timesheet.dao.EmployeeDAO;
@@ -11,7 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @RestController
 @Api(value="My Rest Endpoint")
@@ -21,12 +26,13 @@ public class MyController {
     @Autowired
     TimesheetDAO timesheetDAO;
 
+    @Autowired
+    PtoDAO ptoDAO;
 
     @Autowired
-    EmployeeDAO employeeDAO;
+    PtoPolicyDAO ptoPolicyDAO;
 
-
-        /*
+    /*
     @PostMapping("byFirstname")
     @ApiOperation(value = "Find Timesheet by First Name", response = Timesheet.class)
     public Timesheet getCustomerByFirstName(@RequestBody Tmp data) {
@@ -39,10 +45,5 @@ public class MyController {
     @GetMapping("all")
     @ApiOperation(value = "List all timesheets", response = Iterable.class)
     public List<Timesheet> getAllTimesheet() {
-            return timesheetDAO.findAll();
-    }
-
-
-
-
-}
+        return timesheetDAO.findAll();
+    }}

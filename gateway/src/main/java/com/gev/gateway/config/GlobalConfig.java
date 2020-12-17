@@ -21,14 +21,13 @@ public class GlobalConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(new PathPatternParser());
         source.registerCorsConfiguration("/**", config);
 
-        System.out.println("Cors filter has been loaded.");
+        //System.out.println("Cors filter has been loaded.");
         return new CorsWebFilter(source);
-    }
 
+    }
 
     @Bean
     public TokenAuthorFilter authenticationJwtTokenFilter() {
-        System.out.println("Token filter has been loaded.");
         return new TokenAuthorFilter();
     }
 }
