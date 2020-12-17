@@ -1,8 +1,8 @@
-package com.dev.timesheet.dao;
+package com.gev.timesheet.dao;
 
-import com.dev.timesheet.TimesheetApplication;
-import com.dev.timesheet.domain.Employee;
-import com.dev.timesheet.domain.Timesheet;
+
+import com.gev.timesheet.TimesheetApplication;
+import com.gev.timesheet.domain.Employee;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -24,7 +24,7 @@ public class EmployeeDAOTest {
     }
 
     @Test
-    public void testFindByUseridAndWeekending() {
+    public void testFindByUserid() {
         Employee employee = testdao.findByUserid("test").orElse(null);
         Assertions.assertAll(() -> {
             Assertions.assertEquals("123@gmail.com", employee.getEmail());

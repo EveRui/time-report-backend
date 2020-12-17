@@ -1,8 +1,7 @@
-package com.dev.timesheet.controller;
+package com.gev.timesheet.controller;
 
-import com.dev.timesheet.dao.EmployeeDAO;
-import com.dev.timesheet.domain.Employee;
-import com.dev.timesheet.service.ProfileService;
+import com.gev.timesheet.domain.Employee;
+import com.gev.timesheet.service.ProfileService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

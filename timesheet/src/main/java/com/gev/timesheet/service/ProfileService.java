@@ -1,7 +1,7 @@
-package com.dev.timesheet.service;
+package com.gev.timesheet.service;
 
-import com.dev.timesheet.dao.EmployeeDAO;
-import com.dev.timesheet.domain.Employee;
+import com.gev.timesheet.dao.EmployeeDAO;
+import com.gev.timesheet.domain.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
