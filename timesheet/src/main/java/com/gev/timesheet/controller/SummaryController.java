@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@Api(value="My Rest Endpoint")
+@Api(value="Summary Rest Endpoint")
 @RequestMapping("/timesheet")
 public class SummaryController {
 
@@ -60,7 +60,7 @@ public class SummaryController {
     }
 
     @GetMapping("summary/Timesheet/{userid}/{weekending}")
-    @ApiOperation(value = "Find Timesheet by userid&Year", response = PtoPolicy.class)
+    @ApiOperation(value = "Find Timesheet by userid&Year", response = Timesheet.class)
     ResponseEntity<?> getTimesheetByUseridAndWeekending(@PathVariable String userid, @PathVariable String weekending) {
 
         System.out.println("From react: " + userid + "-" + weekending);

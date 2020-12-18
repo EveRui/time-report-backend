@@ -28,8 +28,10 @@ public class TimesheetDAOTest {
     @Test
     public void testFindByUseridAndWeekending() {
         Timesheet sheet = testdao.findByUseridAndWeekending("base", "2020-12-12").orElse(null);
+        Timesheet sheet2 = testdao.findByUseridAndWeekending("test", "2020-12-12").orElse(null);
         Assertions.assertAll(() -> {
             Assertions.assertEquals(48, sheet.getTotalcompensatedhours());
+            Assertions.assertEquals(48, sheet2.getTotalcompensatedhours());
             Assertions.assertEquals(true, testdao.findAll().size() > 0);
         });
     }
