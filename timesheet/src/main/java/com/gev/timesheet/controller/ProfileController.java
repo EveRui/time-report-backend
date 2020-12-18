@@ -23,7 +23,7 @@ public class ProfileController {
         this.profileService = profileService;
     }
 
-    @GetMapping("getEmployeeByUserid/{userid}")
+    @GetMapping("profile/Employee/{userid}")
     @ApiOperation(value = "Find Employee by User Id", response = Employee.class)
     ResponseEntity<?> getEmployeeByUserid(@PathVariable String userid) {
         System.out.println("From react get user: " + userid);
@@ -32,7 +32,7 @@ public class ProfileController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("updateEmployee")
+    @PostMapping("profile/updateEmployee")
     @ApiOperation(value = "Update or Save Employee by User Id")
     ResponseEntity<Employee> setEmployeeByUserid(@RequestBody Employee employee) {
         System.out.println("From react update user:"+employee.getUserid() );
