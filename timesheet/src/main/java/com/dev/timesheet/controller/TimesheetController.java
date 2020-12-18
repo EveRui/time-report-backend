@@ -8,13 +8,14 @@ import com.dev.timesheet.domain.PtoPolicy;
 import com.dev.timesheet.domain.Timesheet;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-import java.util.Optional;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @RestController
 @Api(value="My Rest Endpoint")
@@ -73,6 +74,16 @@ public class TimesheetController {
     @ApiOperation(value = "List all timesheets by userid", response = Iterable.class)
     public List<Timesheet> getAllTimesheetByUserid(@PathVariable String userid) {
         List<Timesheet> list = timesheetDAO.findByUserid(userid);
+
+//        Collections.sort(list, new Comparator<Timesheet>(){
+//           @SneakyThrows
+//           public int compare(Timesheet t1, Timesheet t2){
+//               SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//               Date d1 = sdf.parse(t1.getWeekending());
+//               Date d2 = sdf.parse(t2.getWeekending());
+//               return d1.compareTo(d2);
+//           }
+//        });
 
         return list;
     }
