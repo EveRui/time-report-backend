@@ -18,7 +18,7 @@ import java.util.Optional;
 
 @RestController
 @Api(value="My Rest Endpoint")
-@RequestMapping("/summary")
+@RequestMapping("/timesheet")
 public class SummaryController {
 
     @Autowired
@@ -31,7 +31,7 @@ public class SummaryController {
     PtoPolicyDAO ptoPolicyDAO;
 
 
-    @GetMapping("getPtoByUseridAndYear/{userid}/year/{year}")
+    @GetMapping("summary/Pto/{userid}/{year}")
     @ApiOperation(value = "Find PTO by Userid&Year", response = PTO.class)
     ResponseEntity<?> getPtoByUseridAndYear(@PathVariable String userid, @PathVariable String year) {
 
@@ -41,7 +41,7 @@ public class SummaryController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @PostMapping("updatePTO")
+    @PostMapping("summary/updatePto")
     @ApiOperation(value = "Update PTO by User Id")
     ResponseEntity<PTO> setDtoByUserid(@RequestBody PTO pto) {
         System.out.println("From react: update" );
@@ -49,7 +49,7 @@ public class SummaryController {
         return ResponseEntity.ok().body(result);
     }
 
-    @GetMapping("getPtoPolicyByJobtitleAndYear/{jobtitle}/year/{year}")
+    @GetMapping("summary/PtoPolicy/{jobtitle}/{year}")
     @ApiOperation(value = "Find PtoPolicy by Jobtitle&Year", response = PtoPolicy.class)
     ResponseEntity<?> getPtoPolicyByJobtitleAndYear(@PathVariable String jobtitle, @PathVariable String year) {
 
@@ -59,7 +59,7 @@ public class SummaryController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("getTimesheetByUseridAndWeekending/{userid}/{weekending}")
+    @GetMapping("summary/Timesheet/{userid}/{weekending}")
     @ApiOperation(value = "Find Timesheet by userid&Year", response = PtoPolicy.class)
     ResponseEntity<?> getTimesheetByUseridAndWeekending(@PathVariable String userid, @PathVariable String weekending) {
 
@@ -69,7 +69,7 @@ public class SummaryController {
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
 
-    @GetMapping("getTimesheetListByUserid/{userid}")
+    @GetMapping("summary/TimesheetList/{userid}")
     @ApiOperation(value = "List all timesheets by userid", response = Iterable.class)
     public List<Timesheet> getAllTimesheetByUserid(@PathVariable String userid) {
         List<Timesheet> list = timesheetDAO.findByUserid(userid);
@@ -77,7 +77,7 @@ public class SummaryController {
         return list;
     }
 
-    @PostMapping("updateTimesheet")
+    @PostMapping("summary/updateTimesheet")
     @ApiOperation(value = "Update Timesheet by User Id")
     ResponseEntity<Timesheet> setTimesheetByUserid(@RequestBody Timesheet timesheet) {
         System.out.println("From react: update timesheet" );
