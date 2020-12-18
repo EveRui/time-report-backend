@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@Api(value="My Rest Endpoint")
+@Api(value="Summary Rest Endpoint")
 @RequestMapping("/timesheet")
 public class SummaryController {
 

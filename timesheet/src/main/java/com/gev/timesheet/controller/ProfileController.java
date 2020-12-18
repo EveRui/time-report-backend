@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController
-@Api(value="My Rest Endpoint")
+@Api(value="Profile Rest Endpoint")
 @RequestMapping("/timesheet")
 public class ProfileController {
 
